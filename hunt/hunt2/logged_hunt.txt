@@ -1,6 +1,1 @@
-[Thu Apr  3 14:24:13 2025] ADD: Added treasure ID: 1, Username: user2, Value: 789000
-[Thu Apr  3 14:24:26 2025] LIST: Listed 1 treasures
-[Thu Apr  3 14:25:07 2025] VIEW: Viewed treasure ID: 1, Username: user2
-[Thu Apr  3 14:28:41 2025] VIEW: Viewed treasure ID: 1, Username: user2
-[Thu Apr  3 14:33:11 2025] VIEW: Viewed treasure ID: 1, Username: user2
-[Thu Apr  3 14:56:04 2025] LIST: Listed 1 treasures
+[Wed Apr  9 16:45:47 2025] ADD: Added treasure ID: 1, Username: user3, Value: 3567

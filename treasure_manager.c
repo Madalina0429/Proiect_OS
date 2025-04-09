@@ -41,7 +41,10 @@ char *get_treasure_file_path(const char *hunt_id);
 void save_treasures(const char *hunt_id, Hunt *hunt);
 Hunt *load_treasures(const char *hunt_id);
 void log_operation(const char *hunt_id, const char *operation, const char *details);
+void create_log_symlinks();
 void merge_hunt_logs();
+void remove_treasure(const char *hunt_id, int treasure_id);
+void remove_hunt(const char *hunt_id);
 
 // Function to merge hunt logs into a single file
 void merge_hunt_logs()
@@ -85,7 +88,7 @@ void merge_hunt_logs()
             FILE *log_file = fopen(log_path, "r");
             if (log_file != NULL)
             {
-                printf("Appending log from: %s\n", log_path); // Debugging line
+                // printf("Appending log from: %s\n", log_path); // Debugging line
                 fprintf(output_file, "=== Log for Hunt: %s ===\n", entry->d_name);
                 while (fgets(buffer, sizeof(buffer), log_file) != NULL)
                 {
@@ -99,7 +102,71 @@ void merge_hunt_logs()
 
     closedir(hunt_dir);
     fclose(output_file);
-    printf("Hunt logs merged successfully into hunt_log.txt\n");
+    printf("\nHunt logs merged successfully into hunt_log.txt\n");
+}
+
+// Function to create symbolic links for logged_hunt.txt files
+void create_log_symlinks()
+{
+    DIR *hunt_dir = opendir("hunt");
+    if (!hunt_dir)
+    {
+        perror("Error opening hunt directory");
+        return;
+    }
+
+    // Create links_log_hunt directory if it doesn't exist
+    if (mkdir("links_log_hunt", 0755) != 0 && errno != EEXIST)
+    {
+        perror("Error creating links_log_hunt directory");
+        closedir(hunt_dir);
+        return;
+    }
+
+    struct dirent *entry;
+    struct stat st;
+    char logged_hunt_path[MAX_STRING];
+    char symlink_path[MAX_STRING];
+
+    while ((entry = readdir(hunt_dir)) != NULL)
+    {
+        if (entry->d_type == DT_DIR &&
+            strcmp(entry->d_name, ".") != 0 &&
+            strcmp(entry->d_name, "..") != 0)
+        {
+
+            // Check if the subdirectory starts with "hunt"
+            if (strncmp(entry->d_name, "hunt", 4) == 0)
+            {
+                const char *hunt_id = entry->d_name + 4; // Extract ID from "hunt<ID>"
+
+                snprintf(logged_hunt_path, sizeof(logged_hunt_path),
+                         "hunt/%s/logged_hunt.txt", entry->d_name);
+
+                // Check if logged_hunt.txt exists
+                if (stat(logged_hunt_path, &st) == 0)
+                {
+                    snprintf(symlink_path, sizeof(symlink_path),
+                             "links_log_hunt/logged_hunt-%s", hunt_id);
+
+                    // Remove existing symlink if any
+                    unlink(symlink_path);
+
+                    if (symlink(logged_hunt_path, symlink_path) != 0)
+                    {
+                        perror("Failed to create symlink");
+                    }
+                    else
+                    {
+                        printf("\nCreated symlink: %s -> %s\n", symlink_path, logged_hunt_path);
+                    }
+                }
+            }
+        }
+    }
+
+    closedir(hunt_dir);
+    // printf("Symbolic links created in links_log_hunt directory.\n");
 }
 
 // Function to log operations
@@ -133,6 +200,7 @@ void log_operation(const char *hunt_id, const char *operation, const char *detai
     fprintf(log_file, "[%s] %s: %s\n", timestamp, operation, details);
     fclose(log_file);
     merge_hunt_logs();
+    create_log_symlinks();
 }
 
 // Function to create hunt subdirectory if it doesn't exist
@@ -258,7 +326,7 @@ void add_treasure(const char *hunt_id)
     }
 
     log_operation(hunt_id, "ADD", log_details);
-    printf("Treasure added successfully with ID: %d\n", new_treasure->id);
+    printf("\nTreasure added successfully with ID: %d\n", new_treasure->id);
 }
 
 // Function to list all treasures from a hunt
@@ -288,7 +356,7 @@ void list_treasures(const char *hunt_id)
         Treasure *t = &hunt->treasures[i];
         printf("\nID: %d\n", t->id);
         printf("Username: %s\n", t->username);
-        printf("Location: %.6f, %.6f\n", t->latitude, t->longitude);
+        printf("Location: %.4f, %.4f\n", t->latitude, t->longitude);
         printf("Clue: %s\n", t->clue);
         printf("Value: %d\n", t->value);
     }
@@ -343,6 +411,115 @@ void view_treasure(const char *hunt_id, int treasure_id)
     log_operation(hunt_id, "VIEW", log_details);
 }
 
+void remove_treasure(const char *hunt_id, int treasure_id)
+{
+    Hunt *hunt = load_treasures(hunt_id);
+
+    if (hunt->treasure_count == 0)
+    {
+        printf("\nNo treasures to remove in hunt %s\n", hunt_id);
+        log_operation(hunt_id, "REMOVE", "Failed: No treasures found");
+        return;
+    }
+
+    int found = 0;
+
+    for (int i = 0; i < hunt->treasure_count; i++)
+    {
+        if (hunt->treasures[i].id == treasure_id)
+        {
+            found = 1;
+
+            // Shift remaining treasures up
+            for (int j = i; j < hunt->treasure_count - 1; j++)
+            {
+                hunt->treasures[j] = hunt->treasures[j + 1];
+            }
+
+            hunt->treasure_count--;
+
+            // Reassign IDs to be sequential again
+            for (int k = 0; k < hunt->treasure_count; k++)
+            {
+                hunt->treasures[k].id = k + 1;
+            }
+
+            save_treasures(hunt_id, hunt);
+
+            char log_details[MAX_LOG_DETAILS];
+            snprintf(log_details, sizeof(log_details), "Removed treasure ID: %d. Remaining count: %d", treasure_id, hunt->treasure_count);
+            log_operation(hunt_id, "REMOVE", log_details);
+
+            printf("\nTreasure ID %d removed successfully.\n", treasure_id);
+            return;
+        }
+    }
+
+    if (!found)
+    {
+        printf("\nTreasure ID %d not found in hunt %s\n", treasure_id, hunt_id);
+        char log_details[MAX_LOG_DETAILS];
+        snprintf(log_details, sizeof(log_details), "Failed to remove treasure ID: %d (not found)", treasure_id);
+        log_operation(hunt_id, "REMOVE", log_details);
+    }
+}
+
+void remove_hunt(const char *hunt_id)
+{
+    char dir_path[MAX_STRING];
+    if (snprintf(dir_path, sizeof(dir_path), "hunt/hunt%s", hunt_id) >= sizeof(dir_path))
+    {
+        fprintf(stderr, "Directory path truncated for hunt_id: %s\n", hunt_id);
+        return;
+    }
+
+    DIR *dir = opendir(dir_path);
+    if (dir == NULL)
+    {
+        perror("Failed to open hunt directory");
+        return;
+    }
+
+    struct dirent *entry;
+    char file_path[MAX_STRING];
+
+    // Remove all files in the hunt directory
+    while ((entry = readdir(dir)) != NULL)
+    {
+        if (strcmp(entry->d_name, ".") == 0 || strcmp(entry->d_name, "..") == 0)
+            continue;
+
+        if (snprintf(file_path, sizeof(file_path), "%s/%s", dir_path, entry->d_name) >= sizeof(file_path))
+        {
+            fprintf(stderr, "File path truncated: %s\n", entry->d_name);
+            continue;
+        }
+
+        if (remove(file_path) != 0)
+        {
+            perror("Error deleting file");
+        }
+    }
+
+    closedir(dir);
+
+    // Remove the directory itself
+    if (rmdir(dir_path) != 0)
+    {
+        perror("Failed to remove hunt directory");
+        return;
+    }
+
+    // Remove the symlink to the hunt directory
+    char symlink_path[MAX_STRING];
+    if (snprintf(symlink_path, sizeof(symlink_path), "links_log_hunt/logged_hunt-%s", hunt_id) < sizeof(symlink_path))
+    {
+        unlink(symlink_path); // Ignore errors if it doesn't exist
+    }
+
+    printf("\nHunt %s removed successfully.\n", hunt_id);
+}
+
 int main(int argc, char *argv[])
 {
     if (argc < 3)
@@ -352,6 +529,8 @@ int main(int argc, char *argv[])
         printf("  add <hunt_id> - Add a new treasure\n");
         printf("  list <hunt_id> - List all treasures\n");
         printf("  view <hunt_id> <treasure_id> - View specific treasure\n");
+        printf("  remove <hunt_id> <treasure_id> - Removes a specific treasure from a specific hunt\n");
+        printf("  remove_hunt <hunt_id> - Removes a specific hunt\n");
         return 1;
     }
 
@@ -370,6 +549,19 @@ int main(int argc, char *argv[])
     else if (strcmp(command, "view") == 0)
     {
         view_treasure(hunt_id, treasure_id);
+    }
+    else if (strcmp(command, "remove") == 0)
+    {
+        if (treasure_id == 0)
+        {
+            printf("Please provide a valid treasure ID to remove.\n");
+            return 1;
+        }
+        remove_treasure(hunt_id, treasure_id);
+    }
+    else if (strcmp(command, "remove_hunt") == 0)
+    {
+        remove_hunt(hunt_id);
     }
     else
     {
