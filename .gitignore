@@ -1,0 +1,26 @@
+# Ignore compiled binaries
+*.o
+*.out
+*.exe
+
+# Ignore backup files
+*~
+*.swp
+*.bak
+
+# Ignore logs
+hunt_log.txt
+*/logged_hunt.txt
+
+# Ignore generated symlinks
+links_log_hunt/
+
+# Ignore system files
+.DS_Store
+Thumbs.db
+
+# Ignore treasure data files
+*/treasures.dat
+
+# Build artifacts (if using Makefiles or other build systems)
+build/
