@@ -7,11 +7,15 @@
 #include <errno.h>
 #include <unistd.h>
 #include <dirent.h>
+#include <signal.h>
+#include <fcntl.h>
 
 #define MAX_STRING 512
 #define MAX_CLUE 1024
 #define MAX_TREASURES 100
 #define MAX_LOG_DETAILS 1024 // Increased buffer size for log details
+#define COMMAND_FILE "monitor_command.txt"
+#define RESPONSE_FILE "monitor_response.txt"
 
 // Structure to hold treasure information
 typedef struct
@@ -45,6 +49,12 @@ void create_log_symlinks();
 void merge_hunt_logs();
 void remove_treasure(const char *hunt_id, int treasure_id);
 void remove_hunt(const char *hunt_id);
+void handle_sigusr1(int signum);
+void monitor_mode();
+void process_command(const char *command);
+
+// Add these global variables after the includes
+static volatile sig_atomic_t running = 1;
 
 // Function to merge hunt logs into a single file
 void merge_hunt_logs()
@@ -172,10 +182,36 @@ void create_log_symlinks()
 // Function to log operations
 void log_operation(const char *hunt_id, const char *operation, const char *details)
 {
-    char log_path[MAX_STRING];
-    if (snprintf(log_path, sizeof(log_path), "hunt/hunt%s/logged_hunt.txt", hunt_id) >= sizeof(log_path))
+    // Clean hunt_id by removing spaces
+    char clean_hunt_id[MAX_STRING];
+    int j = 0;
+    for (int i = 0; hunt_id[i] != '\0'; i++)
     {
-        fprintf(stderr, "Log path truncated for hunt_id: %s\n", hunt_id);
+        if (hunt_id[i] != ' ')
+        {
+            clean_hunt_id[j++] = hunt_id[i];
+        }
+    }
+    clean_hunt_id[j] = '\0';
+
+    char log_path[MAX_STRING];
+    if (snprintf(log_path, sizeof(log_path), "hunt/hunt%s/logged_hunt.txt", clean_hunt_id) >= sizeof(log_path))
+    {
+        fprintf(stderr, "Log path truncated for hunt_id: %s\n", clean_hunt_id);
+        return;
+    }
+
+    // Create the directory if it doesn't exist
+    char dir_path[MAX_STRING];
+    if (snprintf(dir_path, sizeof(dir_path), "hunt/hunt%s", clean_hunt_id) >= sizeof(dir_path))
+    {
+        fprintf(stderr, "Directory path truncated for hunt_id: %s\n", clean_hunt_id);
+        return;
+    }
+
+    if (mkdir(dir_path, 0755) != 0 && errno != EEXIST)
+    {
+        perror("Error creating hunt directory");
         return;
     }
 
@@ -224,9 +260,21 @@ void create_hunt_directory(const char *hunt_id)
 char *get_treasure_file_path(const char *hunt_id)
 {
     static char path[MAX_STRING];
-    if (snprintf(path, sizeof(path), "hunt/hunt%s/treasures.dat", hunt_id) >= sizeof(path))
+    // Remove any spaces from hunt_id
+    char clean_hunt_id[MAX_STRING];
+    int j = 0;
+    for (int i = 0; hunt_id[i] != '\0'; i++)
     {
-        fprintf(stderr, "Treasure file path truncated for hunt_id: %s\n", hunt_id);
+        if (hunt_id[i] != ' ')
+        {
+            clean_hunt_id[j++] = hunt_id[i];
+        }
+    }
+    clean_hunt_id[j] = '\0';
+
+    if (snprintf(path, sizeof(path), "hunt/hunt%s/treasures.dat", clean_hunt_id) >= sizeof(path))
+    {
+        fprintf(stderr, "Treasure file path truncated for hunt_id: %s\n", clean_hunt_id);
         exit(EXIT_FAILURE);
     }
     return path;
@@ -332,16 +380,44 @@ void add_treasure(const char *hunt_id)
 // Function to list all treasures from a hunt
 void list_treasures(const char *hunt_id)
 {
-    Hunt *hunt = load_treasures(hunt_id);
+    printf("Debug: Attempting to list treasures for hunt: %s\n", hunt_id);
 
-    if (hunt->treasure_count == 0)
+    char *file_path = get_treasure_file_path(hunt_id);
+    printf("Debug: Treasure file path: %s\n", file_path);
+
+    FILE *file = fopen(file_path, "rb");
+    if (file == NULL)
+    {
+        printf("Debug: Failed to open treasure file. Error: %s\n", strerror(errno));
+        printf("No treasures found in hunt: %s\n", hunt_id);
+        return;
+    }
+
+    Hunt hunt;
+    if (fread(&hunt.treasure_count, sizeof(int), 1, file) != 1)
+    {
+        printf("Debug: Failed to read treasure count\n");
+        fclose(file);
+        return;
+    }
+
+    printf("Debug: Found %d treasures\n", hunt.treasure_count);
+
+    if (hunt.treasure_count == 0)
     {
         printf("No treasures found in hunt: %s\n", hunt_id);
         log_operation(hunt_id, "LIST", "No treasures found");
         return;
     }
 
-    char *file_path = get_treasure_file_path(hunt_id);
+    // Read all treasures
+    if (fread(hunt.treasures, sizeof(Treasure), hunt.treasure_count, file) != hunt.treasure_count)
+    {
+        printf("Debug: Failed to read treasures\n");
+        fclose(file);
+        return;
+    }
+
     struct stat st;
     if (stat(file_path, &st) == 0)
     {
@@ -351,9 +427,9 @@ void list_treasures(const char *hunt_id)
         printf("\nTreasures:\n");
     }
 
-    for (int i = 0; i < hunt->treasure_count; i++)
+    for (int i = 0; i < hunt.treasure_count; i++)
     {
-        Treasure *t = &hunt->treasures[i];
+        Treasure *t = &hunt.treasures[i];
         printf("\nID: %d\n", t->id);
         printf("Username: %s\n", t->username);
         printf("Location: %.4f, %.4f\n", t->latitude, t->longitude);
@@ -361,8 +437,10 @@ void list_treasures(const char *hunt_id)
         printf("Value: %d\n", t->value);
     }
 
+    fclose(file);
+
     char log_details[MAX_LOG_DETAILS];
-    snprintf(log_details, sizeof(log_details), "Listed %d treasures", hunt->treasure_count);
+    snprintf(log_details, sizeof(log_details), "Listed %d treasures", hunt.treasure_count);
     log_operation(hunt_id, "LIST", log_details);
 }
 
@@ -520,8 +598,140 @@ void remove_hunt(const char *hunt_id)
     printf("\nHunt %s removed successfully.\n", hunt_id);
 }
 
+void handle_sigusr1(int signum)
+{
+    printf("Debug: Received SIGUSR1 signal\n");
+
+    // Read command from file
+    FILE *cmd_file = fopen(COMMAND_FILE, "r");
+    if (!cmd_file)
+    {
+        printf("Debug: Failed to open command file\n");
+        return;
+    }
+
+    char command[1024];
+    if (fgets(command, sizeof(command), cmd_file))
+    {
+        command[strcspn(command, "\n")] = 0; // Remove newline
+        printf("Debug: Processing command: %s\n", command);
+        process_command(command);
+    }
+    else
+    {
+        printf("Debug: No command found in file\n");
+    }
+    fclose(cmd_file);
+}
+
+void process_command(const char *command)
+{
+    FILE *response_file = fopen(RESPONSE_FILE, "w");
+    if (!response_file)
+    {
+        // printf("Debug: Failed to open response file\n");
+        return;
+    }
+
+    if (strcmp(command, "stop") == 0)
+    {
+        running = 0;
+        fprintf(response_file, "Monitor stopping...\n");
+        printf("Monitor stopping...\n");
+    }
+    else if (strcmp(command, "list_hunts") == 0)
+    {
+        // printf("Debug: Processing list_hunts command\n");
+        DIR *hunt_dir = opendir("hunt");
+        if (hunt_dir)
+        {
+            // printf("Debug: Successfully opened hunt directory\n");
+            struct dirent *entry;
+            int found_hunts = 0;
+            printf("Available hunts:\n");
+            while ((entry = readdir(hunt_dir)) != NULL)
+            {
+                // printf("Debug: Found entry: %s\n", entry->d_name);
+                if (entry->d_type == DT_DIR && strncmp(entry->d_name, "hunt", 4) == 0)
+                {
+                    char *hunt_id = entry->d_name + 4;
+                    // printf("Debug: Found hunt directory: %s\n", hunt_id);
+                    Hunt *hunt = load_treasures(hunt_id);
+                    if (hunt)
+                    {
+                        // printf("Debug: Found %d treasures in hunt %s\n", hunt->treasure_count, hunt_id);
+                        printf("Hunt %s: %d treasures\n", hunt_id, hunt->treasure_count);
+                        fprintf(response_file, "Hunt %s: %d treasures\n", hunt_id, hunt->treasure_count);
+                        found_hunts = 1;
+                    }
+                }
+            }
+            if (!found_hunts)
+            {
+                printf("Debug: No hunts found\n");
+                printf("No hunts found\n");
+                fprintf(response_file, "No hunts found\n");
+            }
+            closedir(hunt_dir);
+        }
+        else
+        {
+            printf("Debug: Failed to open hunt directory: %s\n", strerror(errno));
+            printf("Error: Could not open hunt directory\n");
+            fprintf(response_file, "Error: Could not open hunt directory\n");
+        }
+    }
+    else if (strncmp(command, "list_treasures ", 14) == 0)
+    {
+        const char *hunt_id = command + 14;
+        list_treasures(hunt_id);
+    }
+    else if (strncmp(command, "view_treasure ", 13) == 0)
+    {
+        char hunt_id[512];
+        int treasure_id;
+        if (sscanf(command + 13, "%s %d", hunt_id, &treasure_id) == 2)
+        {
+            view_treasure(hunt_id, treasure_id);
+        }
+    }
+
+    fclose(response_file);
+    // Delay exit as required
+    usleep(100000); // 100ms delay
+}
+
+void monitor_mode()
+{
+    // Set up signal handler
+    struct sigaction sa;
+    sa.sa_handler = handle_sigusr1;
+    sigemptyset(&sa.sa_mask);
+    sa.sa_flags = SA_RESTART;
+    if (sigaction(SIGUSR1, &sa, NULL) < 0)
+    {
+        perror("sigaction failed");
+        exit(1);
+    }
+
+    // Ignore SIGTSTP (Ctrl+Z) to prevent stopping
+    signal(SIGTSTP, SIG_IGN);
+
+    printf("Monitor mode started. Waiting for commands...\n");
+    while (running)
+    {
+        pause(); // Wait for signals
+    }
+}
+
 int main(int argc, char *argv[])
 {
+    if (argc > 1 && strcmp(argv[1], "monitor") == 0)
+    {
+        monitor_mode();
+        return 0;
+    }
+
     if (argc < 3)
     {
         printf("Usage: %s <command> <hunt_id> [treasure_id]\n", argv[0]);
