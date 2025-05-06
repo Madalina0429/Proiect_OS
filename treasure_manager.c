@@ -52,6 +52,7 @@ void remove_hunt(const char *hunt_id);
 void handle_sigusr1(int signum);
 void monitor_mode();
 void process_command(const char *command);
+void display_commands();
 
 // Add these global variables after the includes
 static volatile sig_atomic_t running = 1;
@@ -336,22 +337,40 @@ void add_treasure(const char *hunt_id)
     Treasure *new_treasure = &hunt->treasures[hunt->treasure_count];
     new_treasure->id = hunt->treasure_count + 1;
 
+    char input[1024];
     printf("Enter username: ");
-    scanf("%s", new_treasure->username);
+    if (fgets(input, sizeof(input), stdin))
+    {
+        input[strcspn(input, "\n")] = 0;
+        strncpy(new_treasure->username, input, MAX_STRING - 1);
+        new_treasure->username[MAX_STRING - 1] = '\0';
+    }
 
     printf("Enter latitude: ");
-    scanf("%lf", &new_treasure->latitude);
+    if (fgets(input, sizeof(input), stdin))
+    {
+        new_treasure->latitude = atof(input);
+    }
 
     printf("Enter longitude: ");
-    scanf("%lf", &new_treasure->longitude);
+    if (fgets(input, sizeof(input), stdin))
+    {
+        new_treasure->longitude = atof(input);
+    }
 
     printf("Enter clue: ");
-    getchar(); // Clear buffer
-    fgets(new_treasure->clue, MAX_CLUE, stdin);
-    new_treasure->clue[strcspn(new_treasure->clue, "\n")] = 0; // Remove newline
+    if (fgets(input, sizeof(input), stdin))
+    {
+        input[strcspn(input, "\n")] = 0;
+        strncpy(new_treasure->clue, input, MAX_CLUE - 1);
+        new_treasure->clue[MAX_CLUE - 1] = '\0';
+    }
 
     printf("Enter value: ");
-    scanf("%d", &new_treasure->value);
+    if (fgets(input, sizeof(input), stdin))
+    {
+        new_treasure->value = atoi(input);
+    }
 
     hunt->treasure_count++;
     save_treasures(hunt_id, hunt);
@@ -724,6 +743,18 @@ void monitor_mode()
     }
 }
 
+void display_commands()
+{
+    printf("\nAvailable commands:\n");
+    printf("  add <hunt_id> - Add a new treasure\n");
+    printf("  list <hunt_id> - List all treasures\n");
+    printf("  view <hunt_id> <treasure_id> - View specific treasure\n");
+    printf("  remove <hunt_id> <treasure_id> - Remove a specific treasure\n");
+    printf("  remove_hunt <hunt_id> - Remove a specific hunt\n");
+    printf("  exit - Exit the program\n");
+    printf("\nEnter command: ");
+}
+
 int main(int argc, char *argv[])
 {
     if (argc > 1 && strcmp(argv[1], "monitor") == 0)
@@ -732,15 +763,76 @@ int main(int argc, char *argv[])
         return 0;
     }
 
+    if (argc == 1)
+    {
+        printf("Welcome to Treasure Manager!\n");
+        display_commands();
+
+        char command[1024];
+        while (1)
+        {
+            if (fgets(command, sizeof(command), stdin))
+            {
+                command[strcspn(command, "\n")] = 0; // Remove newline
+
+                if (strcmp(command, "exit") == 0)
+                {
+                    printf("Exiting Treasure Manager...\n");
+                    break;
+                }
+
+                // Parse the command
+                char cmd[32], hunt_id[512];
+                int treasure_id = 0;
+
+                if (sscanf(command, "%31s %511s %d", cmd, hunt_id, &treasure_id) >= 2)
+                {
+                    if (strcmp(cmd, "add") == 0)
+                    {
+                        add_treasure(hunt_id);
+                    }
+                    else if (strcmp(cmd, "list") == 0)
+                    {
+                        list_treasures(hunt_id);
+                    }
+                    else if (strcmp(cmd, "view") == 0)
+                    {
+                        view_treasure(hunt_id, treasure_id);
+                    }
+                    else if (strcmp(cmd, "remove") == 0)
+                    {
+                        if (treasure_id == 0)
+                        {
+                            printf("Please provide a valid treasure ID to remove.\n");
+                        }
+                        else
+                        {
+                            remove_treasure(hunt_id, treasure_id);
+                        }
+                    }
+                    else if (strcmp(cmd, "remove_hunt") == 0)
+                    {
+                        remove_hunt(hunt_id);
+                    }
+                    else
+                    {
+                        printf("Unknown command: %s\n", cmd);
+                    }
+                }
+                else
+                {
+                    printf("Invalid command format. Please use: <command> <hunt_id> [treasure_id]\n");
+                }
+                display_commands();
+            }
+        }
+        return 0;
+    }
+
     if (argc < 3)
     {
         printf("Usage: %s <command> <hunt_id> [treasure_id]\n", argv[0]);
-        printf("Commands:\n");
-        printf("  add <hunt_id> - Add a new treasure\n");
-        printf("  list <hunt_id> - List all treasures\n");
-        printf("  view <hunt_id> <treasure_id> - View specific treasure\n");
-        printf("  remove <hunt_id> <treasure_id> - Removes a specific treasure from a specific hunt\n");
-        printf("  remove_hunt <hunt_id> - Removes a specific hunt\n");
+        display_commands();
         return 1;
     }
 

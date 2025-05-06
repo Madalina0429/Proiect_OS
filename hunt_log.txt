@@ -380,3 +380,50 @@
 === Log for Hunt: hunt2 ===
 [Wed Apr  9 16:45:47 2025] ADD: Added treasure ID: 1, Username: user3, Value: 3567
 
+=== Log for Hunt: hunt1 ===
+[Wed Apr  2 23:42:51 2025] ADD: Added treasure ID: 1, Username: user1, Value: 1234
+[Wed Apr  2 23:44:55 2025] LIST: Listed 1 treasures
+[Thu Apr  3 14:17:55 2025] ADD: Added treasure ID: 1, Username: user1, Value: 45000
+[Thu Apr  3 14:36:25 2025] LIST: Listed 1 treasures
+[Thu Apr  3 15:00:00 2025] LIST: Listed 1 treasures
+[Wed Apr  9 15:41:16 2025] ADD: Added treasure ID: 2, Username: user3, Value: 234
+[Wed Apr  9 16:06:25 2025] REMOVE: Removed treasure ID: 2. Remaining count: 1
+[Wed Apr  9 16:06:56 2025] LIST: Listed 1 treasures
+[Wed Apr  9 16:10:46 2025] ADD: Added treasure ID: 2, Username: user2, Value: 450
+[Wed Apr  9 16:10:58 2025] LIST: Listed 2 treasures
+[Wed Apr  9 16:11:12 2025] REMOVE: Removed treasure ID: 1. Remaining count: 1
+[Wed Apr  9 16:11:18 2025] LIST: Listed 1 treasures
+[Wed Apr  9 16:15:47 2025] ADD: Added treasure ID: 2, Username: user4, Value: 50000
+[Wed Apr  9 16:15:51 2025] LIST: Listed 2 treasures
+[Wed Apr  9 16:17:13 2025] REMOVE: Removed treasure ID: 1. Remaining count: 1
+[Wed Apr  9 16:17:15 2025] LIST: Listed 1 treasures
+[Wed Apr  9 16:48:20 2025] ADD: Added treasure ID: 2, Username: user5, Value: 8990
+[Tue May  6 21:11:48 2025] LIST: Listed 2 treasures
+
+=== Log for Hunt: hunt2 ===
+[Wed Apr  9 16:45:47 2025] ADD: Added treasure ID: 1, Username: user3, Value: 3567
+
+=== Log for Hunt: hunt1 ===
+[Wed Apr  2 23:42:51 2025] ADD: Added treasure ID: 1, Username: user1, Value: 1234
+[Wed Apr  2 23:44:55 2025] LIST: Listed 1 treasures
+[Thu Apr  3 14:17:55 2025] ADD: Added treasure ID: 1, Username: user1, Value: 45000
+[Thu Apr  3 14:36:25 2025] LIST: Listed 1 treasures
+[Thu Apr  3 15:00:00 2025] LIST: Listed 1 treasures
+[Wed Apr  9 15:41:16 2025] ADD: Added treasure ID: 2, Username: user3, Value: 234
+[Wed Apr  9 16:06:25 2025] REMOVE: Removed treasure ID: 2. Remaining count: 1
+[Wed Apr  9 16:06:56 2025] LIST: Listed 1 treasures
+[Wed Apr  9 16:10:46 2025] ADD: Added treasure ID: 2, Username: user2, Value: 450
+[Wed Apr  9 16:10:58 2025] LIST: Listed 2 treasures
+[Wed Apr  9 16:11:12 2025] REMOVE: Removed treasure ID: 1. Remaining count: 1
+[Wed Apr  9 16:11:18 2025] LIST: Listed 1 treasures
+[Wed Apr  9 16:15:47 2025] ADD: Added treasure ID: 2, Username: user4, Value: 50000
+[Wed Apr  9 16:15:51 2025] LIST: Listed 2 treasures
+[Wed Apr  9 16:17:13 2025] REMOVE: Removed treasure ID: 1. Remaining count: 1
+[Wed Apr  9 16:17:15 2025] LIST: Listed 1 treasures
+[Wed Apr  9 16:48:20 2025] ADD: Added treasure ID: 2, Username: user5, Value: 8990
+[Tue May  6 21:11:48 2025] LIST: Listed 2 treasures
+[Tue May  6 21:12:00 2025] VIEW: Viewed treasure ID: 1, Username: user4
+
+=== Log for Hunt: hunt2 ===
+[Wed Apr  9 16:45:47 2025] ADD: Added treasure ID: 1, Username: user3, Value: 3567
+
