@@ -1,1 +1,14 @@
 [Wed Apr  9 16:45:47 2025] ADD: Added treasure ID: 1, Username: user3, Value: 3567
+[Fri Apr 25 13:41:19 2025] REMOVE: Removed treasure ID: 1. Remaining count: 0
+[Fri Apr 25 13:41:35 2025] LIST: No treasures found
+[Fri Apr 25 13:42:05 2025] ADD: Added treasure ID: 1, Username: eu, Value: 890
+[Fri Apr 25 13:42:10 2025] LIST: Listed 1 treasures
+[Fri Apr 25 13:42:16 2025] REMOVE: Removed treasure ID: 1. Remaining count: 0
+[Fri Apr 25 14:25:28 2025] LIST: No treasures found
+[Tue May  6 20:20:13 2025] ADD: Added treasure ID: 1, Username: dysh, Value: 8989
+[Tue May  6 20:20:24 2025] LIST: Listed 1 treasures
+[Tue May  6 20:32:07 2025] ADD: Added treasure ID: 2, Username: user4, Value: 345
+[Thu May 15 15:46:31 2025] ADD: Added treasure ID: 3, Username: uds4, Value: 1234
+[Thu May 15 15:46:59 2025] LIST: Listed 3 treasures
+[Thu May 15 15:47:34 2025] ADD: Added treasure ID: 4, Username: user9, Value: 890
+[Thu May 15 15:48:22 2025] REMOVE: Removed treasure ID: 3. Remaining count: 3
