@@ -1941,4 +1941,409 @@
 [Thu May 15 15:46:31 2025] ADD: Added treasure ID: 3, Username: uds4, Value: 1234
 [Thu May 15 15:46:59 2025] LIST: Listed 3 treasures
 [Thu May 15 15:47:34 2025] ADD: Added treasure ID: 4, Username: user9, Value: 890
+[Thu May 15 15:48:22 2025] REMOVE: Removed treasure ID: 3. Remaining count: 3=== Log for Hunt: hunt1 ===
+[Fri Apr 25 13:22:07 2025] ADD: Added treasure ID: 1, Username: ussr1, Value: 2345
+[Fri Apr 25 13:22:12 2025] LIST: Listed 1 treasures
+[Fri Apr 25 13:34:51 2025] LIST: Listed 1 treasures
+[Fri Apr 25 13:35:56 2025] VIEW: Viewed treasure ID: 1, Username: ussr1
+[Fri Apr 25 13:38:26 2025] LIST: Listed 1 treasures
+[Fri Apr 25 13:38:56 2025] VIEW: Viewed treasure ID: 1, Username: ussr1
+[Fri Apr 25 14:25:13 2025] LIST: Listed 1 treasures
+[Fri Apr 25 14:25:57 2025] VIEW: Viewed treasure ID: 1, Username: ussr1
+[Tue May  6 20:19:28 2025] LIST: Listed 1 treasures
+[Tue May  6 20:19:44 2025] VIEW: Viewed treasure ID: 1, Username: ussr1
+[Tue May  6 20:31:14 2025] ADD: Added treasure ID: 2, Username: user2, Value: 5679
+[Tue May  6 20:31:28 2025] LIST: Listed 2 treasures
+[Tue May  6 20:35:52 2025] ADD: Added treasure ID: 3, Username: user3, Value: 3456
+[Tue May  6 20:36:14 2025] LIST: Listed 3 treasures
+[Tue May  6 20:58:13 2025] LIST: Listed 3 treasures
+[Tue May  6 20:59:20 2025] VIEW: Viewed treasure ID: 1, Username: ussr1
+[Tue May  6 21:00:51 2025] VIEW: Viewed treasure ID: 1, Username: ussr1
+[Wed May  7 00:12:07 2025] LIST: Listed 3 treasures
+[Wed May  7 00:19:47 2025] LIST: Listed 3 treasures
+[Wed May  7 00:20:16 2025] VIEW: Viewed treasure ID: 1, Username: ussr1
+[Wed May 14 15:54:37 2025] LIST: Listed 3 treasures
+[Wed May 14 16:22:01 2025] LIST: Listed 3 treasures
+[Wed May 14 16:32:05 2025] LIST: Listed 3 treasures
+[Wed May 14 16:58:30 2025] LIST: Listed 3 treasures
+[Wed May 14 17:00:54 2025] VIEW: Viewed treasure ID: 1, Username: ussr1
+[Thu May 15 15:12:44 2025] LIST: Listed 3 treasures
+[Thu May 15 15:13:20 2025] VIEW: Viewed treasure ID: 1, Username: ussr1
+[Thu May 15 15:40:34 2025] LIST: Listed 3 treasures
+[Thu May 15 15:44:20 2025] LIST: Listed 3 treasures
+[Thu May 15 15:45:02 2025] VIEW: Viewed treasure ID: 1, Username: ussr1
+[Thu May 15 15:47:59 2025] VIEW: Viewed treasure ID: 2, Username: user2
+[Thu May 15 15:51:52 2025] ADD: Added treasure ID: 4, Username: uder5, Value: 5678
+[Thu May 15 15:52:00 2025] LIST: Listed 4 treasures
+[Thu May 15 15:52:08 2025] VIEW: Viewed treasure ID: 4, Username: uder5
+[Thu May 15 15:54:02 2025] LIST: Listed 4 treasures
+[Thu May 15 15:54:17 2025] VIEW: Viewed treasure ID: 4, Username: uder5
+[Fri May 16 22:03:41 2025] LIST: Listed 4 treasures
+
+=== Log for Hunt: hunt2 ===
+[Wed Apr  9 16:45:47 2025] ADD: Added treasure ID: 1, Username: user3, Value: 3567
+[Fri Apr 25 13:41:19 2025] REMOVE: Removed treasure ID: 1. Remaining count: 0
+[Fri Apr 25 13:41:35 2025] LIST: No treasures found
+[Fri Apr 25 13:42:05 2025] ADD: Added treasure ID: 1, Username: eu, Value: 890
+[Fri Apr 25 13:42:10 2025] LIST: Listed 1 treasures
+[Fri Apr 25 13:42:16 2025] REMOVE: Removed treasure ID: 1. Remaining count: 0
+[Fri Apr 25 14:25:28 2025] LIST: No treasures found
+[Tue May  6 20:20:13 2025] ADD: Added treasure ID: 1, Username: dysh, Value: 8989
+[Tue May  6 20:20:24 2025] LIST: Listed 1 treasures
+[Tue May  6 20:32:07 2025] ADD: Added treasure ID: 2, Username: user4, Value: 345
+[Thu May 15 15:46:31 2025] ADD: Added treasure ID: 3, Username: uds4, Value: 1234
+[Thu May 15 15:46:59 2025] LIST: Listed 3 treasures
+[Thu May 15 15:47:34 2025] ADD: Added treasure ID: 4, Username: user9, Value: 890
 [Thu May 15 15:48:22 2025] REMOVE: Removed treasure ID: 3. Remaining count: 3
+
+=== Log for Hunt: hunt1 ===
+[Fri Apr 25 13:22:07 2025] ADD: Added treasure ID: 1, Username: ussr1, Value: 2345
+[Fri Apr 25 13:22:12 2025] LIST: Listed 1 treasures
+[Fri Apr 25 13:34:51 2025] LIST: Listed 1 treasures
+[Fri Apr 25 13:35:56 2025] VIEW: Viewed treasure ID: 1, Username: ussr1
+[Fri Apr 25 13:38:26 2025] LIST: Listed 1 treasures
+[Fri Apr 25 13:38:56 2025] VIEW: Viewed treasure ID: 1, Username: ussr1
+[Fri Apr 25 14:25:13 2025] LIST: Listed 1 treasures
+[Fri Apr 25 14:25:57 2025] VIEW: Viewed treasure ID: 1, Username: ussr1
+[Tue May  6 20:19:28 2025] LIST: Listed 1 treasures
+[Tue May  6 20:19:44 2025] VIEW: Viewed treasure ID: 1, Username: ussr1
+[Tue May  6 20:31:14 2025] ADD: Added treasure ID: 2, Username: user2, Value: 5679
+[Tue May  6 20:31:28 2025] LIST: Listed 2 treasures
+[Tue May  6 20:35:52 2025] ADD: Added treasure ID: 3, Username: user3, Value: 3456
+[Tue May  6 20:36:14 2025] LIST: Listed 3 treasures
+[Tue May  6 20:58:13 2025] LIST: Listed 3 treasures
+[Tue May  6 20:59:20 2025] VIEW: Viewed treasure ID: 1, Username: ussr1
+[Tue May  6 21:00:51 2025] VIEW: Viewed treasure ID: 1, Username: ussr1
+[Wed May  7 00:12:07 2025] LIST: Listed 3 treasures
+[Wed May  7 00:19:47 2025] LIST: Listed 3 treasures
+[Wed May  7 00:20:16 2025] VIEW: Viewed treasure ID: 1, Username: ussr1
+[Wed May 14 15:54:37 2025] LIST: Listed 3 treasures
+[Wed May 14 16:22:01 2025] LIST: Listed 3 treasures
+[Wed May 14 16:32:05 2025] LIST: Listed 3 treasures
+[Wed May 14 16:58:30 2025] LIST: Listed 3 treasures
+[Wed May 14 17:00:54 2025] VIEW: Viewed treasure ID: 1, Username: ussr1
+[Thu May 15 15:12:44 2025] LIST: Listed 3 treasures
+[Thu May 15 15:13:20 2025] VIEW: Viewed treasure ID: 1, Username: ussr1
+[Thu May 15 15:40:34 2025] LIST: Listed 3 treasures
+[Thu May 15 15:44:20 2025] LIST: Listed 3 treasures
+[Thu May 15 15:45:02 2025] VIEW: Viewed treasure ID: 1, Username: ussr1
+[Thu May 15 15:47:59 2025] VIEW: Viewed treasure ID: 2, Username: user2
+[Thu May 15 15:51:52 2025] ADD: Added treasure ID: 4, Username: uder5, Value: 5678
+[Thu May 15 15:52:00 2025] LIST: Listed 4 treasures
+[Thu May 15 15:52:08 2025] VIEW: Viewed treasure ID: 4, Username: uder5
+[Thu May 15 15:54:02 2025] LIST: Listed 4 treasures
+[Thu May 15 15:54:17 2025] VIEW: Viewed treasure ID: 4, Username: uder5
+[Fri May 16 22:03:41 2025] LIST: Listed 4 treasures
+[Fri May 16 22:03:55 2025] VIEW: Viewed treasure ID: 1, Username: ussr1
+
+=== Log for Hunt: hunt2 ===
+[Wed Apr  9 16:45:47 2025] ADD: Added treasure ID: 1, Username: user3, Value: 3567
+[Fri Apr 25 13:41:19 2025] REMOVE: Removed treasure ID: 1. Remaining count: 0
+[Fri Apr 25 13:41:35 2025] LIST: No treasures found
+[Fri Apr 25 13:42:05 2025] ADD: Added treasure ID: 1, Username: eu, Value: 890
+[Fri Apr 25 13:42:10 2025] LIST: Listed 1 treasures
+[Fri Apr 25 13:42:16 2025] REMOVE: Removed treasure ID: 1. Remaining count: 0
+[Fri Apr 25 14:25:28 2025] LIST: No treasures found
+[Tue May  6 20:20:13 2025] ADD: Added treasure ID: 1, Username: dysh, Value: 8989
+[Tue May  6 20:20:24 2025] LIST: Listed 1 treasures
+[Tue May  6 20:32:07 2025] ADD: Added treasure ID: 2, Username: user4, Value: 345
+[Thu May 15 15:46:31 2025] ADD: Added treasure ID: 3, Username: uds4, Value: 1234
+[Thu May 15 15:46:59 2025] LIST: Listed 3 treasures
+[Thu May 15 15:47:34 2025] ADD: Added treasure ID: 4, Username: user9, Value: 890
+[Thu May 15 15:48:22 2025] REMOVE: Removed treasure ID: 3. Remaining count: 3
+
+=== Log for Hunt: hunt1 ===
+[Fri Apr 25 13:22:07 2025] ADD: Added treasure ID: 1, Username: ussr1, Value: 2345
+[Fri Apr 25 13:22:12 2025] LIST: Listed 1 treasures
+[Fri Apr 25 13:34:51 2025] LIST: Listed 1 treasures
+[Fri Apr 25 13:35:56 2025] VIEW: Viewed treasure ID: 1, Username: ussr1
+[Fri Apr 25 13:38:26 2025] LIST: Listed 1 treasures
+[Fri Apr 25 13:38:56 2025] VIEW: Viewed treasure ID: 1, Username: ussr1
+[Fri Apr 25 14:25:13 2025] LIST: Listed 1 treasures
+[Fri Apr 25 14:25:57 2025] VIEW: Viewed treasure ID: 1, Username: ussr1
+[Tue May  6 20:19:28 2025] LIST: Listed 1 treasures
+[Tue May  6 20:19:44 2025] VIEW: Viewed treasure ID: 1, Username: ussr1
+[Tue May  6 20:31:14 2025] ADD: Added treasure ID: 2, Username: user2, Value: 5679
+[Tue May  6 20:31:28 2025] LIST: Listed 2 treasures
+[Tue May  6 20:35:52 2025] ADD: Added treasure ID: 3, Username: user3, Value: 3456
+[Tue May  6 20:36:14 2025] LIST: Listed 3 treasures
+[Tue May  6 20:58:13 2025] LIST: Listed 3 treasures
+[Tue May  6 20:59:20 2025] VIEW: Viewed treasure ID: 1, Username: ussr1
+[Tue May  6 21:00:51 2025] VIEW: Viewed treasure ID: 1, Username: ussr1
+[Wed May  7 00:12:07 2025] LIST: Listed 3 treasures
+[Wed May  7 00:19:47 2025] LIST: Listed 3 treasures
+[Wed May  7 00:20:16 2025] VIEW: Viewed treasure ID: 1, Username: ussr1
+[Wed May 14 15:54:37 2025] LIST: Listed 3 treasures
+[Wed May 14 16:22:01 2025] LIST: Listed 3 treasures
+[Wed May 14 16:32:05 2025] LIST: Listed 3 treasures
+[Wed May 14 16:58:30 2025] LIST: Listed 3 treasures
+[Wed May 14 17:00:54 2025] VIEW: Viewed treasure ID: 1, Username: ussr1
+[Thu May 15 15:12:44 2025] LIST: Listed 3 treasures
+[Thu May 15 15:13:20 2025] VIEW: Viewed treasure ID: 1, Username: ussr1
+[Thu May 15 15:40:34 2025] LIST: Listed 3 treasures
+[Thu May 15 15:44:20 2025] LIST: Listed 3 treasures
+[Thu May 15 15:45:02 2025] VIEW: Viewed treasure ID: 1, Username: ussr1
+[Thu May 15 15:47:59 2025] VIEW: Viewed treasure ID: 2, Username: user2
+[Thu May 15 15:51:52 2025] ADD: Added treasure ID: 4, Username: uder5, Value: 5678
+[Thu May 15 15:52:00 2025] LIST: Listed 4 treasures
+[Thu May 15 15:52:08 2025] VIEW: Viewed treasure ID: 4, Username: uder5
+[Thu May 15 15:54:02 2025] LIST: Listed 4 treasures
+[Thu May 15 15:54:17 2025] VIEW: Viewed treasure ID: 4, Username: uder5
+[Fri May 16 22:03:41 2025] LIST: Listed 4 treasures
+[Fri May 16 22:03:55 2025] VIEW: Viewed treasure ID: 1, Username: ussr1
+[Fri May 16 22:05:27 2025] ADD: Added treasure ID: 5, Username: user3, Value: 100
+
+=== Log for Hunt: hunt2 ===
+[Wed Apr  9 16:45:47 2025] ADD: Added treasure ID: 1, Username: user3, Value: 3567
+[Fri Apr 25 13:41:19 2025] REMOVE: Removed treasure ID: 1. Remaining count: 0
+[Fri Apr 25 13:41:35 2025] LIST: No treasures found
+[Fri Apr 25 13:42:05 2025] ADD: Added treasure ID: 1, Username: eu, Value: 890
+[Fri Apr 25 13:42:10 2025] LIST: Listed 1 treasures
+[Fri Apr 25 13:42:16 2025] REMOVE: Removed treasure ID: 1. Remaining count: 0
+[Fri Apr 25 14:25:28 2025] LIST: No treasures found
+[Tue May  6 20:20:13 2025] ADD: Added treasure ID: 1, Username: dysh, Value: 8989
+[Tue May  6 20:20:24 2025] LIST: Listed 1 treasures
+[Tue May  6 20:32:07 2025] ADD: Added treasure ID: 2, Username: user4, Value: 345
+[Thu May 15 15:46:31 2025] ADD: Added treasure ID: 3, Username: uds4, Value: 1234
+[Thu May 15 15:46:59 2025] LIST: Listed 3 treasures
+[Thu May 15 15:47:34 2025] ADD: Added treasure ID: 4, Username: user9, Value: 890
+[Thu May 15 15:48:22 2025] REMOVE: Removed treasure ID: 3. Remaining count: 3
+
+=== Log for Hunt: hunt1 ===
+[Fri Apr 25 13:22:07 2025] ADD: Added treasure ID: 1, Username: ussr1, Value: 2345
+[Fri Apr 25 13:22:12 2025] LIST: Listed 1 treasures
+[Fri Apr 25 13:34:51 2025] LIST: Listed 1 treasures
+[Fri Apr 25 13:35:56 2025] VIEW: Viewed treasure ID: 1, Username: ussr1
+[Fri Apr 25 13:38:26 2025] LIST: Listed 1 treasures
+[Fri Apr 25 13:38:56 2025] VIEW: Viewed treasure ID: 1, Username: ussr1
+[Fri Apr 25 14:25:13 2025] LIST: Listed 1 treasures
+[Fri Apr 25 14:25:57 2025] VIEW: Viewed treasure ID: 1, Username: ussr1
+[Tue May  6 20:19:28 2025] LIST: Listed 1 treasures
+[Tue May  6 20:19:44 2025] VIEW: Viewed treasure ID: 1, Username: ussr1
+[Tue May  6 20:31:14 2025] ADD: Added treasure ID: 2, Username: user2, Value: 5679
+[Tue May  6 20:31:28 2025] LIST: Listed 2 treasures
+[Tue May  6 20:35:52 2025] ADD: Added treasure ID: 3, Username: user3, Value: 3456
+[Tue May  6 20:36:14 2025] LIST: Listed 3 treasures
+[Tue May  6 20:58:13 2025] LIST: Listed 3 treasures
+[Tue May  6 20:59:20 2025] VIEW: Viewed treasure ID: 1, Username: ussr1
+[Tue May  6 21:00:51 2025] VIEW: Viewed treasure ID: 1, Username: ussr1
+[Wed May  7 00:12:07 2025] LIST: Listed 3 treasures
+[Wed May  7 00:19:47 2025] LIST: Listed 3 treasures
+[Wed May  7 00:20:16 2025] VIEW: Viewed treasure ID: 1, Username: ussr1
+[Wed May 14 15:54:37 2025] LIST: Listed 3 treasures
+[Wed May 14 16:22:01 2025] LIST: Listed 3 treasures
+[Wed May 14 16:32:05 2025] LIST: Listed 3 treasures
+[Wed May 14 16:58:30 2025] LIST: Listed 3 treasures
+[Wed May 14 17:00:54 2025] VIEW: Viewed treasure ID: 1, Username: ussr1
+[Thu May 15 15:12:44 2025] LIST: Listed 3 treasures
+[Thu May 15 15:13:20 2025] VIEW: Viewed treasure ID: 1, Username: ussr1
+[Thu May 15 15:40:34 2025] LIST: Listed 3 treasures
+[Thu May 15 15:44:20 2025] LIST: Listed 3 treasures
+[Thu May 15 15:45:02 2025] VIEW: Viewed treasure ID: 1, Username: ussr1
+[Thu May 15 15:47:59 2025] VIEW: Viewed treasure ID: 2, Username: user2
+[Thu May 15 15:51:52 2025] ADD: Added treasure ID: 4, Username: uder5, Value: 5678
+[Thu May 15 15:52:00 2025] LIST: Listed 4 treasures
+[Thu May 15 15:52:08 2025] VIEW: Viewed treasure ID: 4, Username: uder5
+[Thu May 15 15:54:02 2025] LIST: Listed 4 treasures
+[Thu May 15 15:54:17 2025] VIEW: Viewed treasure ID: 4, Username: uder5
+[Fri May 16 22:03:41 2025] LIST: Listed 4 treasures
+[Fri May 16 22:03:55 2025] VIEW: Viewed treasure ID: 1, Username: ussr1
+[Fri May 16 22:05:27 2025] ADD: Added treasure ID: 5, Username: user3, Value: 100
+[Fri May 16 22:05:43 2025] LIST: Listed 5 treasures
+
+=== Log for Hunt: hunt2 ===
+[Wed Apr  9 16:45:47 2025] ADD: Added treasure ID: 1, Username: user3, Value: 3567
+[Fri Apr 25 13:41:19 2025] REMOVE: Removed treasure ID: 1. Remaining count: 0
+[Fri Apr 25 13:41:35 2025] LIST: No treasures found
+[Fri Apr 25 13:42:05 2025] ADD: Added treasure ID: 1, Username: eu, Value: 890
+[Fri Apr 25 13:42:10 2025] LIST: Listed 1 treasures
+[Fri Apr 25 13:42:16 2025] REMOVE: Removed treasure ID: 1. Remaining count: 0
+[Fri Apr 25 14:25:28 2025] LIST: No treasures found
+[Tue May  6 20:20:13 2025] ADD: Added treasure ID: 1, Username: dysh, Value: 8989
+[Tue May  6 20:20:24 2025] LIST: Listed 1 treasures
+[Tue May  6 20:32:07 2025] ADD: Added treasure ID: 2, Username: user4, Value: 345
+[Thu May 15 15:46:31 2025] ADD: Added treasure ID: 3, Username: uds4, Value: 1234
+[Thu May 15 15:46:59 2025] LIST: Listed 3 treasures
+[Thu May 15 15:47:34 2025] ADD: Added treasure ID: 4, Username: user9, Value: 890
+[Thu May 15 15:48:22 2025] REMOVE: Removed treasure ID: 3. Remaining count: 3
+
+=== Log for Hunt: hunt1 ===
+[Fri Apr 25 13:22:07 2025] ADD: Added treasure ID: 1, Username: ussr1, Value: 2345
+[Fri Apr 25 13:22:12 2025] LIST: Listed 1 treasures
+[Fri Apr 25 13:34:51 2025] LIST: Listed 1 treasures
+[Fri Apr 25 13:35:56 2025] VIEW: Viewed treasure ID: 1, Username: ussr1
+[Fri Apr 25 13:38:26 2025] LIST: Listed 1 treasures
+[Fri Apr 25 13:38:56 2025] VIEW: Viewed treasure ID: 1, Username: ussr1
+[Fri Apr 25 14:25:13 2025] LIST: Listed 1 treasures
+[Fri Apr 25 14:25:57 2025] VIEW: Viewed treasure ID: 1, Username: ussr1
+[Tue May  6 20:19:28 2025] LIST: Listed 1 treasures
+[Tue May  6 20:19:44 2025] VIEW: Viewed treasure ID: 1, Username: ussr1
+[Tue May  6 20:31:14 2025] ADD: Added treasure ID: 2, Username: user2, Value: 5679
+[Tue May  6 20:31:28 2025] LIST: Listed 2 treasures
+[Tue May  6 20:35:52 2025] ADD: Added treasure ID: 3, Username: user3, Value: 3456
+[Tue May  6 20:36:14 2025] LIST: Listed 3 treasures
+[Tue May  6 20:58:13 2025] LIST: Listed 3 treasures
+[Tue May  6 20:59:20 2025] VIEW: Viewed treasure ID: 1, Username: ussr1
+[Tue May  6 21:00:51 2025] VIEW: Viewed treasure ID: 1, Username: ussr1
+[Wed May  7 00:12:07 2025] LIST: Listed 3 treasures
+[Wed May  7 00:19:47 2025] LIST: Listed 3 treasures
+[Wed May  7 00:20:16 2025] VIEW: Viewed treasure ID: 1, Username: ussr1
+[Wed May 14 15:54:37 2025] LIST: Listed 3 treasures
+[Wed May 14 16:22:01 2025] LIST: Listed 3 treasures
+[Wed May 14 16:32:05 2025] LIST: Listed 3 treasures
+[Wed May 14 16:58:30 2025] LIST: Listed 3 treasures
+[Wed May 14 17:00:54 2025] VIEW: Viewed treasure ID: 1, Username: ussr1
+[Thu May 15 15:12:44 2025] LIST: Listed 3 treasures
+[Thu May 15 15:13:20 2025] VIEW: Viewed treasure ID: 1, Username: ussr1
+[Thu May 15 15:40:34 2025] LIST: Listed 3 treasures
+[Thu May 15 15:44:20 2025] LIST: Listed 3 treasures
+[Thu May 15 15:45:02 2025] VIEW: Viewed treasure ID: 1, Username: ussr1
+[Thu May 15 15:47:59 2025] VIEW: Viewed treasure ID: 2, Username: user2
+[Thu May 15 15:51:52 2025] ADD: Added treasure ID: 4, Username: uder5, Value: 5678
+[Thu May 15 15:52:00 2025] LIST: Listed 4 treasures
+[Thu May 15 15:52:08 2025] VIEW: Viewed treasure ID: 4, Username: uder5
+[Thu May 15 15:54:02 2025] LIST: Listed 4 treasures
+[Thu May 15 15:54:17 2025] VIEW: Viewed treasure ID: 4, Username: uder5
+[Fri May 16 22:03:41 2025] LIST: Listed 4 treasures
+[Fri May 16 22:03:55 2025] VIEW: Viewed treasure ID: 1, Username: ussr1
+[Fri May 16 22:05:27 2025] ADD: Added treasure ID: 5, Username: user3, Value: 100
+[Fri May 16 22:05:43 2025] LIST: Listed 5 treasures
+[Fri May 16 22:05:50 2025] VIEW: Viewed treasure ID: 5, Username: user3
+
+=== Log for Hunt: hunt2 ===
+[Wed Apr  9 16:45:47 2025] ADD: Added treasure ID: 1, Username: user3, Value: 3567
+[Fri Apr 25 13:41:19 2025] REMOVE: Removed treasure ID: 1. Remaining count: 0
+[Fri Apr 25 13:41:35 2025] LIST: No treasures found
+[Fri Apr 25 13:42:05 2025] ADD: Added treasure ID: 1, Username: eu, Value: 890
+[Fri Apr 25 13:42:10 2025] LIST: Listed 1 treasures
+[Fri Apr 25 13:42:16 2025] REMOVE: Removed treasure ID: 1. Remaining count: 0
+[Fri Apr 25 14:25:28 2025] LIST: No treasures found
+[Tue May  6 20:20:13 2025] ADD: Added treasure ID: 1, Username: dysh, Value: 8989
+[Tue May  6 20:20:24 2025] LIST: Listed 1 treasures
+[Tue May  6 20:32:07 2025] ADD: Added treasure ID: 2, Username: user4, Value: 345
+[Thu May 15 15:46:31 2025] ADD: Added treasure ID: 3, Username: uds4, Value: 1234
+[Thu May 15 15:46:59 2025] LIST: Listed 3 treasures
+[Thu May 15 15:47:34 2025] ADD: Added treasure ID: 4, Username: user9, Value: 890
+[Thu May 15 15:48:22 2025] REMOVE: Removed treasure ID: 3. Remaining count: 3
+
+=== Log for Hunt: hunt1 ===
+[Fri Apr 25 13:22:07 2025] ADD: Added treasure ID: 1, Username: ussr1, Value: 2345
+[Fri Apr 25 13:22:12 2025] LIST: Listed 1 treasures
+[Fri Apr 25 13:34:51 2025] LIST: Listed 1 treasures
+[Fri Apr 25 13:35:56 2025] VIEW: Viewed treasure ID: 1, Username: ussr1
+[Fri Apr 25 13:38:26 2025] LIST: Listed 1 treasures
+[Fri Apr 25 13:38:56 2025] VIEW: Viewed treasure ID: 1, Username: ussr1
+[Fri Apr 25 14:25:13 2025] LIST: Listed 1 treasures
+[Fri Apr 25 14:25:57 2025] VIEW: Viewed treasure ID: 1, Username: ussr1
+[Tue May  6 20:19:28 2025] LIST: Listed 1 treasures
+[Tue May  6 20:19:44 2025] VIEW: Viewed treasure ID: 1, Username: ussr1
+[Tue May  6 20:31:14 2025] ADD: Added treasure ID: 2, Username: user2, Value: 5679
+[Tue May  6 20:31:28 2025] LIST: Listed 2 treasures
+[Tue May  6 20:35:52 2025] ADD: Added treasure ID: 3, Username: user3, Value: 3456
+[Tue May  6 20:36:14 2025] LIST: Listed 3 treasures
+[Tue May  6 20:58:13 2025] LIST: Listed 3 treasures
+[Tue May  6 20:59:20 2025] VIEW: Viewed treasure ID: 1, Username: ussr1
+[Tue May  6 21:00:51 2025] VIEW: Viewed treasure ID: 1, Username: ussr1
+[Wed May  7 00:12:07 2025] LIST: Listed 3 treasures
+[Wed May  7 00:19:47 2025] LIST: Listed 3 treasures
+[Wed May  7 00:20:16 2025] VIEW: Viewed treasure ID: 1, Username: ussr1
+[Wed May 14 15:54:37 2025] LIST: Listed 3 treasures
+[Wed May 14 16:22:01 2025] LIST: Listed 3 treasures
+[Wed May 14 16:32:05 2025] LIST: Listed 3 treasures
+[Wed May 14 16:58:30 2025] LIST: Listed 3 treasures
+[Wed May 14 17:00:54 2025] VIEW: Viewed treasure ID: 1, Username: ussr1
+[Thu May 15 15:12:44 2025] LIST: Listed 3 treasures
+[Thu May 15 15:13:20 2025] VIEW: Viewed treasure ID: 1, Username: ussr1
+[Thu May 15 15:40:34 2025] LIST: Listed 3 treasures
+[Thu May 15 15:44:20 2025] LIST: Listed 3 treasures
+[Thu May 15 15:45:02 2025] VIEW: Viewed treasure ID: 1, Username: ussr1
+[Thu May 15 15:47:59 2025] VIEW: Viewed treasure ID: 2, Username: user2
+[Thu May 15 15:51:52 2025] ADD: Added treasure ID: 4, Username: uder5, Value: 5678
+[Thu May 15 15:52:00 2025] LIST: Listed 4 treasures
+[Thu May 15 15:52:08 2025] VIEW: Viewed treasure ID: 4, Username: uder5
+[Thu May 15 15:54:02 2025] LIST: Listed 4 treasures
+[Thu May 15 15:54:17 2025] VIEW: Viewed treasure ID: 4, Username: uder5
+[Fri May 16 22:03:41 2025] LIST: Listed 4 treasures
+[Fri May 16 22:03:55 2025] VIEW: Viewed treasure ID: 1, Username: ussr1
+[Fri May 16 22:05:27 2025] ADD: Added treasure ID: 5, Username: user3, Value: 100
+[Fri May 16 22:05:43 2025] LIST: Listed 5 treasures
+[Fri May 16 22:05:50 2025] VIEW: Viewed treasure ID: 5, Username: user3
+[Fri May 16 22:06:07 2025] REMOVE: Removed treasure ID: 2. Remaining count: 4
+
+=== Log for Hunt: hunt2 ===
+[Wed Apr  9 16:45:47 2025] ADD: Added treasure ID: 1, Username: user3, Value: 3567
+[Fri Apr 25 13:41:19 2025] REMOVE: Removed treasure ID: 1. Remaining count: 0
+[Fri Apr 25 13:41:35 2025] LIST: No treasures found
+[Fri Apr 25 13:42:05 2025] ADD: Added treasure ID: 1, Username: eu, Value: 890
+[Fri Apr 25 13:42:10 2025] LIST: Listed 1 treasures
+[Fri Apr 25 13:42:16 2025] REMOVE: Removed treasure ID: 1. Remaining count: 0
+[Fri Apr 25 14:25:28 2025] LIST: No treasures found
+[Tue May  6 20:20:13 2025] ADD: Added treasure ID: 1, Username: dysh, Value: 8989
+[Tue May  6 20:20:24 2025] LIST: Listed 1 treasures
+[Tue May  6 20:32:07 2025] ADD: Added treasure ID: 2, Username: user4, Value: 345
+[Thu May 15 15:46:31 2025] ADD: Added treasure ID: 3, Username: uds4, Value: 1234
+[Thu May 15 15:46:59 2025] LIST: Listed 3 treasures
+[Thu May 15 15:47:34 2025] ADD: Added treasure ID: 4, Username: user9, Value: 890
+[Thu May 15 15:48:22 2025] REMOVE: Removed treasure ID: 3. Remaining count: 3
+
+=== Log for Hunt: hunt1 ===
+[Fri Apr 25 13:22:07 2025] ADD: Added treasure ID: 1, Username: ussr1, Value: 2345
+[Fri Apr 25 13:22:12 2025] LIST: Listed 1 treasures
+[Fri Apr 25 13:34:51 2025] LIST: Listed 1 treasures
+[Fri Apr 25 13:35:56 2025] VIEW: Viewed treasure ID: 1, Username: ussr1
+[Fri Apr 25 13:38:26 2025] LIST: Listed 1 treasures
+[Fri Apr 25 13:38:56 2025] VIEW: Viewed treasure ID: 1, Username: ussr1
+[Fri Apr 25 14:25:13 2025] LIST: Listed 1 treasures
+[Fri Apr 25 14:25:57 2025] VIEW: Viewed treasure ID: 1, Username: ussr1
+[Tue May  6 20:19:28 2025] LIST: Listed 1 treasures
+[Tue May  6 20:19:44 2025] VIEW: Viewed treasure ID: 1, Username: ussr1
+[Tue May  6 20:31:14 2025] ADD: Added treasure ID: 2, Username: user2, Value: 5679
+[Tue May  6 20:31:28 2025] LIST: Listed 2 treasures
+[Tue May  6 20:35:52 2025] ADD: Added treasure ID: 3, Username: user3, Value: 3456
+[Tue May  6 20:36:14 2025] LIST: Listed 3 treasures
+[Tue May  6 20:58:13 2025] LIST: Listed 3 treasures
+[Tue May  6 20:59:20 2025] VIEW: Viewed treasure ID: 1, Username: ussr1
+[Tue May  6 21:00:51 2025] VIEW: Viewed treasure ID: 1, Username: ussr1
+[Wed May  7 00:12:07 2025] LIST: Listed 3 treasures
+[Wed May  7 00:19:47 2025] LIST: Listed 3 treasures
+[Wed May  7 00:20:16 2025] VIEW: Viewed treasure ID: 1, Username: ussr1
+[Wed May 14 15:54:37 2025] LIST: Listed 3 treasures
+[Wed May 14 16:22:01 2025] LIST: Listed 3 treasures
+[Wed May 14 16:32:05 2025] LIST: Listed 3 treasures
+[Wed May 14 16:58:30 2025] LIST: Listed 3 treasures
+[Wed May 14 17:00:54 2025] VIEW: Viewed treasure ID: 1, Username: ussr1
+[Thu May 15 15:12:44 2025] LIST: Listed 3 treasures
+[Thu May 15 15:13:20 2025] VIEW: Viewed treasure ID: 1, Username: ussr1
+[Thu May 15 15:40:34 2025] LIST: Listed 3 treasures
+[Thu May 15 15:44:20 2025] LIST: Listed 3 treasures
+[Thu May 15 15:45:02 2025] VIEW: Viewed treasure ID: 1, Username: ussr1
+[Thu May 15 15:47:59 2025] VIEW: Viewed treasure ID: 2, Username: user2
+[Thu May 15 15:51:52 2025] ADD: Added treasure ID: 4, Username: uder5, Value: 5678
+[Thu May 15 15:52:00 2025] LIST: Listed 4 treasures
+[Thu May 15 15:52:08 2025] VIEW: Viewed treasure ID: 4, Username: uder5
+[Thu May 15 15:54:02 2025] LIST: Listed 4 treasures
+[Thu May 15 15:54:17 2025] VIEW: Viewed treasure ID: 4, Username: uder5
+[Fri May 16 22:03:41 2025] LIST: Listed 4 treasures
+[Fri May 16 22:03:55 2025] VIEW: Viewed treasure ID: 1, Username: ussr1
+[Fri May 16 22:05:27 2025] ADD: Added treasure ID: 5, Username: user3, Value: 100
+[Fri May 16 22:05:43 2025] LIST: Listed 5 treasures
+[Fri May 16 22:05:50 2025] VIEW: Viewed treasure ID: 5, Username: user3
+[Fri May 16 22:06:07 2025] REMOVE: Removed treasure ID: 2. Remaining count: 4
+[Fri May 16 22:06:15 2025] LIST: Listed 4 treasures
+
+=== Log for Hunt: hunt2 ===
+[Wed Apr  9 16:45:47 2025] ADD: Added treasure ID: 1, Username: user3, Value: 3567
+[Fri Apr 25 13:41:19 2025] REMOVE: Removed treasure ID: 1. Remaining count: 0
+[Fri Apr 25 13:41:35 2025] LIST: No treasures found
+[Fri Apr 25 13:42:05 2025] ADD: Added treasure ID: 1, Username: eu, Value: 890
+[Fri Apr 25 13:42:10 2025] LIST: Listed 1 treasures
+[Fri Apr 25 13:42:16 2025] REMOVE: Removed treasure ID: 1. Remaining count: 0
+[Fri Apr 25 14:25:28 2025] LIST: No treasures found
+[Tue May  6 20:20:13 2025] ADD: Added treasure ID: 1, Username: dysh, Value: 8989
+[Tue May  6 20:20:24 2025] LIST: Listed 1 treasures
+[Tue May  6 20:32:07 2025] ADD: Added treasure ID: 2, Username: user4, Value: 345
+[Thu May 15 15:46:31 2025] ADD: Added treasure ID: 3, Username: uds4, Value: 1234
+[Thu May 15 15:46:59 2025] LIST: Listed 3 treasures
+[Thu May 15 15:47:34 2025] ADD: Added treasure ID: 4, Username: user9, Value: 890
+[Thu May 15 15:48:22 2025] REMOVE: Removed treasure ID: 3. Remaining count: 3
+

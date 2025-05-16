@@ -406,15 +406,15 @@ void list_treasures(const char *hunt_id)
     }
     clean_hunt_id[j] = '\0';
 
-    printf("Debug: Attempting to list treasures for hunt: %s\n", clean_hunt_id);
+    // printf("Debug: Attempting to list treasures for hunt: %s\n", clean_hunt_id);
 
     char *file_path = get_treasure_file_path(clean_hunt_id);
-    printf("Debug: Treasure file path: %s\n", file_path);
+    // printf("Debug: Treasure file path: %s\n", file_path);
 
     FILE *file = fopen(file_path, "rb");
     if (file == NULL)
     {
-        printf("Debug: Failed to open treasure file. Error: %s\n", strerror(errno));
+        // printf("Debug: Failed to open treasure file. Error: %s\n", strerror(errno));
         printf("No treasures found in hunt: %s\n", clean_hunt_id);
         return;
     }
@@ -427,7 +427,7 @@ void list_treasures(const char *hunt_id)
         return;
     }
 
-    printf("Debug: Found %d treasures\n", hunt.treasure_count);
+    // printf("Debug: Found %d treasures\n", hunt.treasure_count);
 
     if (hunt.treasure_count == 0)
     {

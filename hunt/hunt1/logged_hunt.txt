@@ -34,3 +34,10 @@
 [Thu May 15 15:52:08 2025] VIEW: Viewed treasure ID: 4, Username: uder5
 [Thu May 15 15:54:02 2025] LIST: Listed 4 treasures
 [Thu May 15 15:54:17 2025] VIEW: Viewed treasure ID: 4, Username: uder5
+[Fri May 16 22:03:41 2025] LIST: Listed 4 treasures
+[Fri May 16 22:03:55 2025] VIEW: Viewed treasure ID: 1, Username: ussr1
+[Fri May 16 22:05:27 2025] ADD: Added treasure ID: 5, Username: user3, Value: 100
+[Fri May 16 22:05:43 2025] LIST: Listed 5 treasures
+[Fri May 16 22:05:50 2025] VIEW: Viewed treasure ID: 5, Username: user3
+[Fri May 16 22:06:07 2025] REMOVE: Removed treasure ID: 2. Remaining count: 4
+[Fri May 16 22:06:15 2025] LIST: Listed 4 treasures

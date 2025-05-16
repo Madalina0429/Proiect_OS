@@ -120,7 +120,7 @@ void send_command(const char *command)
         return;
     }
 
-    printf("Debug: Command written to pipe, sending SIGUSR1 to monitor (PID: %d)\n", monitor_pid);
+    // printf("Debug: Command written to pipe, sending SIGUSR1 to monitor (PID: %d)\n", monitor_pid);
 
     // Send signal to monitor to process command
     if (kill(monitor_pid, SIGUSR1) < 0)
@@ -130,7 +130,7 @@ void send_command(const char *command)
         return;
     }
 
-    printf("Debug: SIGUSR1 sent, waiting for response...\n");
+    // printf("Debug: SIGUSR1 sent, waiting for response...\n");
 
     // Wait for response with timeout
     int timeout = 50; // 5 seconds timeout (50 * 100ms)
@@ -146,7 +146,7 @@ void send_command(const char *command)
 
     if (response_received)
     {
-        printf("Debug: Response received, reading...\n");
+        // printf("Debug: Response received, reading...\n");
         read_monitor_response();
     }
     else if (monitor_running)
@@ -309,7 +309,6 @@ void calculate_hunt_scores(const char *hunt_id)
 
         char line[PIPE_BUF_SIZE];
         char hunt_id_read[MAX_HUNT_ID];
-        int user_count;
 
         // Read hunt ID and user count
         if (fgets(hunt_id_read, sizeof(hunt_id_read), pipe_read))
@@ -318,7 +317,7 @@ void calculate_hunt_scores(const char *hunt_id)
 
             if (fgets(line, sizeof(line), pipe_read))
             {
-                user_count = atoi(line);
+                // int user_count = atoi(line);
 
                 // Print header
                 printf("\nScores for Hunt %s\n", hunt_id_read);
